@@ -12,6 +12,7 @@ public class TileSpawner : MonoBehaviour {
 				GameObject go = Instantiate (Resources.Load ("Tile"), new Vector3 (x, 0, y), Quaternion.Euler(90, 0, 0)) as GameObject;
 				int spriteNum = Random.Range (0, FloorSprites.Length);
 				go.GetComponent<SpriteRenderer> ().sprite = FloorSprites[spriteNum];
+				go.transform.parent = GameObject.Find ("Spawner").transform;
 			}
 		}
 	}
